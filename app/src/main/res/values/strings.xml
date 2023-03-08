@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Laba4</string>
+    <string name="hackathon_list">Hackaton list</string>
+    <string name="user_list">User list</string>
+    <string name="user_list_hackathon_title">%1$s hackathon</string>
+    <string name="user_list_item_title">User %1$s</string>
 </resources>
