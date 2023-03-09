@@ -1,6 +1,7 @@
 package com.vasyancoder.laba4;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +36,13 @@ public class HackathonListAdapter extends ArrayAdapter<HackathonListItem> {
         HackathonListItem item = items.get(position);
         hackathonTitleItem.setText(item.getTextTitle());
         hackathonDescItem.setText(item.getTextDesc());
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Item " + (position + 1) + " clicked", Toast.LENGTH_SHORT).show();
+                Log.d("myLogs", "Item " + (position + 1) + " clicked");
+            }
+        });
         return view;
     }
 }
