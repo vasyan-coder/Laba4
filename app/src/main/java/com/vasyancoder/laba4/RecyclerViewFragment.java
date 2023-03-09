@@ -11,6 +11,9 @@ import androidx.fragment.app.Fragment;
 
 import com.vasyancoder.laba4.databinding.FragmentRecyclerViewBinding;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class RecyclerViewFragment extends Fragment {
 
     private FragmentRecyclerViewBinding binding;
@@ -25,5 +28,19 @@ public class RecyclerViewFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        UserListRecyclerViewAdapter adapter = new UserListRecyclerViewAdapter(getContext(), initList());
+        binding.userRcList.setAdapter(adapter);
+    }
+
+    private List<UserListItem> initList() {
+        List<UserListItem> list = new ArrayList<>();
+        for (int i = 1; i <= 200; i++) {
+            list.add(
+                    new UserListItem(
+                            R.drawable.ic_launcher_background,
+                            getString(R.string.user_list_item_title, String.valueOf(i)))
+            );
+        }
+        return list;
     }
 }
